@@ -1158,7 +1158,7 @@ ul {
         #3a3535; */
         background: linear-gradient(to right, #0a0a0a,#120000);
 
-    padding-top: 20px;
+    padding-top: 40px;
 
     border-top:
         1px solid rgba(255, 0, 0, 0.12);
@@ -1173,7 +1173,7 @@ ul {
 
     gap: 40px;
 
-    padding-bottom: 5px;
+    padding-bottom: 25px;
 }
 
 .footer-box h3,
@@ -1239,11 +1239,11 @@ ul {
 
     text-align: center;
 
-    padding: 4px 0;
+    padding: 24px 0;
     background-color: #000000;
     border: 0.2px;
     /* border-radius: 25px; */
-    color: #880404;
+    color: #7c7c7c;
 }
 
 /* =========================================================
