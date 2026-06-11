@@ -1,0 +1,566 @@
+/* =========================================================
+                    GOOGLE FONT
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+                    RESET
+========================================================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background:
+    linear-gradient(to bottom right,
+    #0f1115,
+    #111827,
+    #0f1115);
+
+    color: #fff;
+
+    overflow-x: hidden;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+                    CUSTOM SCROLLBAR
+========================================================= */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:
+    linear-gradient(to bottom,
+    #ff0000,
+    #ff3c3c);
+
+    border-radius: 50px;
+}
+
+/* =========================================================
+                    CONTAINER
+========================================================= */
+.container{
+    width: 100%;
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+/* =========================================================
+                    PAGE NAVBAR
+========================================================= */
+.page-navbar{
+    width: 100%;
+
+    padding: 22px 8%;
+
+    background:
+    rgba(10,10,10,0.85);
+
+    backdrop-filter: blur(15px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 999;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.08);
+
+    animation:
+    navbarFade 1s ease;
+}
+
+/* NAVBAR ANIMATION */
+
+@keyframes navbarFade{
+
+    from{
+        opacity: 0;
+
+        transform:
+        translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================================================
+                    BACK BUTTON
+========================================================= */
+.back-btn{
+    padding: 14px 28px;
+
+    background:
+    linear-gradient(to right,
+    #ff0000,
+    #ff3d3d);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+    0 8px 25px rgba(255,0,0,0.25);
+}
+
+/* HOVER */
+
+.back-btn:hover{
+    transform:
+    translateY(-4px)
+    scale(1.04);
+
+    box-shadow:
+    0 15px 35px rgba(255,0,0,0.45);
+}
+
+/* =========================================================
+                    PAGE TITLE
+========================================================= */
+.page-title{
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: #fff;
+
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+                    PRODUCTS SECTION
+========================================================= */
+.products{
+    padding: 90px 8%;
+}
+
+/* =========================================================
+                    PRODUCT GRID
+========================================================= */
+.product-grid{
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap: 35px;
+}
+
+/* =========================================================
+                    PRODUCT CARD
+========================================================= */
+.product-card{
+    position: relative;
+
+    background:
+    linear-gradient(to bottom,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02));
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.5s ease;
+
+    animation:
+    cardFade 1s ease;
+
+    cursor: pointer;
+}
+
+/* CARD ANIMATION */
+
+@keyframes cardFade{
+
+    from{
+        opacity: 0;
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* CARD HOVER */
+
+.product-card:hover{
+    transform:
+    translateY(-14px);
+
+    box-shadow:
+    0 20px 50px rgba(255,0,0,0.18);
+
+    border:
+    1px solid rgba(255,0,0,0.3);
+}
+
+/* GLOW EFFECT */
+
+.product-card::before{
+    content: '';
+
+    position: absolute;
+
+    top: -100%;
+    left: -100%;
+
+    width: 300px;
+    height: 300px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,0,0,0.15),
+    transparent);
+
+    transition: 0.7s;
+}
+
+.product-card:hover::before{
+    top: -50px;
+    left: -50px;
+}
+
+/* =========================================================
+                    PRODUCT IMAGE
+========================================================= */
+.product-card img{
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: 0.6s ease;
+}
+
+/* IMAGE HOVER */
+
+.product-card:hover img{
+    transform:
+    scale(1.08);
+}
+
+/* =========================================================
+                    PRODUCT CONTENT
+========================================================= */
+.product-content{
+    padding: 25px;
+}
+
+/* =========================================================
+                    PRODUCT TITLE
+========================================================= */
+.product-content h3{
+    font-size: 1.45rem;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+    color: #fff;
+
+    transition: 0.4s;
+}
+
+/* TITLE HOVER */
+
+.product-card:hover h3{
+    color: #ff4d4d;
+}
+
+/* =========================================================
+                    PRICE
+========================================================= */
+.price{
+    color: #ff2d2d;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+                    DESCRIPTION
+========================================================= */
+.product-content p{
+    color: #cfcfcf;
+
+    font-size: 0.96rem;
+
+    margin-bottom: 18px;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+                    RATING
+========================================================= */
+.rating{
+    color: gold;
+
+    font-size: 1rem;
+
+    margin-bottom: 22px;
+
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+                    BOOK BUTTON
+========================================================= */
+.book-btn{
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    background:
+    linear-gradient(to right,
+    #ff0000,
+    #ff4545);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    transition: 0.5s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* BUTTON SHINE */
+
+.book-btn::before{
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent);
+
+    transition: 0.6s;
+}
+
+.book-btn:hover::before{
+    left: 100%;
+}
+
+/* BUTTON HOVER */
+
+.book-btn:hover{
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 15px 35px rgba(255,0,0,0.45);
+}
+
+/* =========================================================
+                    FOOTER
+========================================================= */
+.footer{
+    margin-top: 80px;
+
+    padding: 35px 8%;
+
+    text-align: center;
+
+    background:
+    rgba(10,10,10,0.9);
+
+    border-top:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.footer p{
+    color: #aaa;
+
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+                    RESPONSIVE
+========================================================= */
+
+/* =========================
+        LARGE DEVICES
+========================= */
+@media(max-width:1200px){
+
+    .products{
+        padding: 80px 5%;
+    }
+
+    .page-navbar{
+        padding: 20px 5%;
+    }
+}
+
+/* =========================
+        TABLETS
+========================= */
+@media(max-width:992px){
+
+    .page-title{
+        font-size: 1.7rem;
+    }
+
+    .product-grid{
+        gap: 28px;
+    }
+
+    .product-card img{
+        height: 240px;
+    }
+}
+
+/* =========================
+        MOBILE
+========================= */
+@media(max-width:768px){
+
+    .page-navbar{
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    .page-title{
+        font-size: 1.5rem;
+    }
+
+    .products{
+        padding: 70px 5%;
+    }
+
+    .product-content{
+        padding: 22px;
+    }
+
+    .product-content h3{
+        font-size: 1.3rem;
+    }
+
+    .price{
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================
+        SMALL MOBILE
+========================= */
+@media(max-width:576px){
+
+    .product-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img{
+        height: 230px;
+    }
+
+    .back-btn{
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .book-btn{
+        padding: 14px;
+    }
+}
+
+/* =========================
+        EXTRA SMALL
+========================= */
+@media(max-width:400px){
+
+    .page-title{
+        font-size: 1.25rem;
+    }
+
+    .product-content h3{
+        font-size: 1.1rem;
+    }
+
+    .product-content p{
+        font-size: 0.9rem;
+    }
+
+    .price{
+        font-size: 1.1rem;
+    }
+}
