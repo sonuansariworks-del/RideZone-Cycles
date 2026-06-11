@@ -746,6 +746,95 @@ ul {
     font-size: 1.1rem;
 }
 
+.about-info {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.owner-card,
+.since-card {
+    position: relative;
+    padding: 18px 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+/* Glow Animation */
+.owner-card::before,
+.since-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 0, 0, 0.3),
+            transparent);
+    transform: rotate(45deg);
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.owner-card:hover,
+.since-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+.owner-label,
+.since-year {
+    display: block;
+    color: #ff3b3b;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.owner-card h3 {
+    color: #fff;
+    margin-top: 8px;
+    font-size: clamp (24px, 1.2vw, 24px);
+}
+
+.since-card h2 {
+    color: #ff0000;
+    margin-top: 5px;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Mobile */
+@media(max-width:768px) {
+    .about-info {
+        flex-direction: column;
+    }
+
+    .owner-card,
+    .since-card {
+        width: 100%;
+    }
+}
+
 /* =========================================================
                     CATEGORY SECTION
 ========================================================= */
